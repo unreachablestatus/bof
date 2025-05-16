@@ -1,0 +1,219 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 224 71.4% 4.1%;
+    --card: 0 0% 100%;
+    --card-foreground: 224 71.4% 4.1%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 71.4% 4.1%;
+    --primary: 262.1 83.3% 57.8%;
+    --primary-light: 262.1 83.3% 67.8%;
+    --primary-dark: 263.4 70% 50.4%;
+    --primary-foreground: 210 20% 98%;
+    --secondary: 220 14.3% 95.9%;
+    --secondary-foreground: 220.9 39.3% 11%;
+    --muted: 220 14.3% 95.9%;
+    --muted-foreground: 220 8.9% 46.1%;
+    --accent: 220 14.3% 95.9%;
+    --accent-foreground: 220.9 39.3% 11%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 20% 98%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 262.1 83.3% 57.8%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 224 71.4% 4.1%;
+    --foreground: 210 20% 98%;
+    --card: 224 71.4% 4.1%;
+    --card-foreground: 210 20% 98%;
+    --popover: 224 71.4% 4.1%;
+    --popover-foreground: 210 20% 98%;
+    --primary: 263.4 70% 50.4%;
+    --primary-light: 262.1 83.3% 57.8%;
+    --primary-dark: 262.1 83.3% 47.8%;
+    --primary-foreground: 210 20% 98%;
+    --secondary: 215 27.9% 16.9%;
+    --secondary-foreground: 210 20% 98%;
+    --muted: 215 27.9% 16.9%;
+    --muted-foreground: 217.9 10.6% 64.9%;
+    --accent: 215 27.9% 16.9%;
+    --accent-foreground: 210 20% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 20% 98%;
+    --border: 215 27.9% 16.9%;
+    --input: 215 27.9% 16.9%;
+    --ring: 263.4 70% 50.4%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+/* Gradient Background Utilities */
+@layer utilities {
+  .gradient-violet-pink {
+    @apply bg-gradient-to-r from-violet-500 to-pink-500;
+  }
+
+  .gradient-blue-purple {
+    @apply bg-gradient-to-r from-blue-500 to-purple-500;
+  }
+
+  .gradient-pink-orange {
+    @apply bg-gradient-to-r from-pink-500 to-orange-500;
+  }
+
+  .gradient-green-blue {
+    @apply bg-gradient-to-r from-green-500 to-blue-500;
+  }
+}
+
+/* Özel Komponentler */
+@layer components {
+  .hero-section {
+    @apply flex flex-col items-center text-center gap-6 py-16 max-w-3xl mx-auto;
+  }
+
+  .hero-title {
+    @apply text-4xl md:text-5xl font-bold text-primary;
+  }
+
+  .hero-description {
+    @apply text-lg md:text-xl text-muted-foreground max-w-2xl;
+  }
+
+  .hero-buttons {
+    @apply flex flex-col sm:flex-row gap-4 mt-4;
+  }
+
+  .cards-grid {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 py-10;
+  }
+
+  .footer-section {
+    @apply text-center py-12 border-t border-border;
+  }
+
+  .footer-title {
+    @apply text-2xl font-bold text-primary mb-4;
+  }
+
+  .footer-text {
+    @apply text-muted-foreground max-w-2xl mx-auto;
+  }
+}
+
+/* İkon Renklendirme Stilleri */
+/* Açık tema için renkler */
+:root {
+  --icon-heart: #e83e8c;
+  --icon-star: #ffc107;
+  --icon-comments: #0d6efd;
+  --icon-book: #6f42c1;
+  --icon-map: #28a745;
+  --icon-sun: #fd7e14;
+  --icon-note-sticky: #20c997;
+  --icon-edit: #6f42c1;
+  --icon-user: #6c757d;
+  --icon-cog: #495057;
+}
+
+/* Koyu tema için renkler */
+.dark {
+  --icon-heart: #ff6cab;
+  --icon-star: #ffdf5e;
+  --icon-comments: #4d94ff;
+  --icon-book: #9e75e2;
+  --icon-map: #4fdf79;
+  --icon-sun: #ffb74d;
+  --icon-note-sticky: #4fe0c0;
+  --icon-edit: #a27de1;
+  --icon-user: #a0a8b0;
+  --icon-cog: #bbc3cc;
+}
+
+.icon-heart, .fa-heart {
+  color: var(--icon-heart);
+}
+
+.icon-star, .fa-star {
+  color: var(--icon-star);
+}
+
+.icon-comments, .fa-comments {
+  color: var(--icon-comments);
+}
+
+.icon-book, .fa-book {
+  color: var(--icon-book);
+}
+
+.icon-map, .fa-map {
+  color: var(--icon-map);
+}
+
+.icon-sun, .fa-sun {
+  color: var(--icon-sun);
+}
+
+.icon-note-sticky, .fa-note-sticky {
+  color: var(--icon-note-sticky);
+}
+
+.icon-edit, .fa-edit {
+  color: var(--icon-edit);
+}
+
+.icon-user, .fa-user {
+  color: var(--icon-user);
+}
+
+.icon-cog, .fa-cog {
+  color: var(--icon-cog);
+}
+
+/* Menü ikonlarının hover durumunda ana renk */
+.hover-icon:hover i {
+  color: hsl(var(--primary));
+}
+
+/* Tema değiştirici butonu için stil */
+.theme-toggle-btn {
+  @apply inline-flex items-center justify-center rounded-full w-10 h-10 bg-background hover:bg-accent transition-colors;
+  border: 1px solid hsl(var(--border));
+}
+
+.theme-toggle-btn i {
+  @apply text-foreground;
+}
+
+/* Tema simgeleri için görünürlük kuralları */
+.theme-toggle-btn .fa-sun {
+  display: none;
+}
+
+.theme-toggle-btn .fa-moon {
+  display: inline-block;
+}
+
+/* Koyu temada simgeleri değiştir */
+.dark .theme-toggle-btn .fa-sun {
+  display: inline-block;
+}
+
+.dark .theme-toggle-btn .fa-moon {
+  display: none;
+}
